@@ -4,7 +4,6 @@ const router = express.Router();
 
 const Post = require('../../models/Post');
 const User = require('../../models/user');
-const Comment = require('../../models/comment');
 
  router.post('/:uid', (req, res) => {
     Post.create({
@@ -44,33 +43,7 @@ const Comment = require('../../models/comment');
         });
 }); 
 
-/* router.post('/:uid', (req, res) => {
-    User.findById(req.params.uid, ((err, user) => {
-        if(err){
-            console.log(err);
-        }else{
-            Post.create({
-                category : req.body.category,
-                content : req.body.content,
-                caption : req.body.caption,
-                tags : req.body.tags,
-                createdAt: req.body.createdAt
-            }, (err, post) => {
-                    if(err){
-                        console.log(err);
-                    }else{
-                        console.log(post);
-                        post.author = req.params.uid;
-                        post.save();
-                        user.posts.push(post);
-                        user.save((user) => {
-                            console.log(user);
-                        })
-                    }
-            });
-        }
-    }));
-}); */
+
 router.post('/:id/edit', (req, res) => {
     const updatedPost = {
         category : req.body.category,

@@ -80,7 +80,7 @@ export const resetPost = () => {
 export const findPost = (id) => {
     return (dispatch) => {
         return axios
-                .get(`/p/${id}?timestamp=${new Date().getTime()}`)
+                .get(`/p/${id}`)
                 .then(res => {
                     dispatch({
                         type: 'FIND_POST',

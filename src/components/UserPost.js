@@ -15,7 +15,6 @@ class UserPost extends React.Component{
     render(){
         return(
             <div className="user__Post">
-                {console.log(this.props.post.length === 1)}
                 { this.props.post.length === 1 && 
                     <PostListItem {...this.props.post[0]} />
                 }
@@ -25,7 +24,6 @@ class UserPost extends React.Component{
 }
 
 const mapStateToProps = (state) => {
-    console.log(state);
     return{
         post : state.posts
     }
