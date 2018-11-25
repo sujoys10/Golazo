@@ -1,0 +1,31 @@
+.connection{
+    max-width: 40rem;
+    margin: 7rem auto;
+    background: white;
+    border: 1px solid #e6e6e6;
+    border-radius: 3px;
+    box-shadow: 0 0 5px rgba(0,0,0,.0975);
+    padding: $xs-size;
+    z-index: 100;
+}
+
+.connection__header{
+    display: flex;
+    justify-content: space-between;
+}
+.connection__title{
+    text-transform: capitalize;
+    font-family: 'Merriweather', serif;
+    font-weight: 700;
+    padding: 0;
+    margin: inherit;
+}
+
+.back{
+    font-size: 14px;
+    opacity: 0.7;
+}
+
+.connecitons__name{
+    margin-top: $xs-size;
+}

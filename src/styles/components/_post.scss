@@ -1,0 +1,95 @@
+.post{
+    background: $white;
+    border: 1px solid #e6e6e6;
+    border-radius: 3px;
+    margin-bottom: 3rem;
+    padding-bottom: $xs-size;
+}
+
+@media screen and (max-width:768px){
+    .post{
+        margin-bottom: $m-size;
+    }
+}
+
+.post__header{
+  //  border-bottom: 1px solid #e6e6e6;
+    padding: $xs-size;
+    padding-bottom: 0;
+    display: flex;
+    justify-content: space-between;
+}
+
+.post__caption{
+    margin-bottom: 0;
+    padding: 0 $xs-size;
+    padding-bottom: $xss-size;
+    font: 500;
+}
+
+.post__content{
+    width: 100%;
+    height: auto;
+}
+
+/* @media screen and (max-width:768px){
+    .post__content{
+        height: 40rem;
+    }
+} */
+
+.post__extra{
+    padding: 0 $m-size;
+}
+
+.post__lc{
+    margin: $xss-size 0;
+}
+.post__button{
+    border: none;
+    background: none;
+    font-size: x-large;
+    font-weight: 500;
+    margin-left: -5px;
+    margin-right: $xs-size;
+}
+
+.post__like{
+    margin:0;
+    margin-bottom: $xss-size;
+    font-weight: 600;
+}
+
+.commentLink{
+    border: none;
+    background: none;
+    margin: 4px 0;
+    padding: 0;
+    font-weight: 600;
+    opacity: 0.5;
+    cursor: pointer;
+}
+
+ .commentForm{
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+} 
+
+.commentBox{
+    padding: $xss-size;
+    border: 0;
+    height: 18px;
+    resize: none;
+    margin-top: $xs-size;
+    width: 90%;
+}
+
+.comment__button{
+    border: none;
+    background: none;
+}
+
+.comment__button:active{
+    border: none;
+}

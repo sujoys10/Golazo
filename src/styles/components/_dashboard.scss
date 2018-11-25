@@ -1,0 +1,26 @@
+.dashboard{
+    max-width: 90rem;
+    margin: 7rem auto;
+}
+
+.postbar{
+    float: left;
+    margin: 1rem 0;
+    width: 73%;
+}
+
+@media screen and (max-width:768px){
+    .postbar{
+        width: 100%;
+    }
+}
+
+.newsfeed{
+    margin: 1rem 0;
+}
+
+.sidebar{
+    float: left;
+    margin: 1rem 0 0 1%;
+    width: 25.5%;
+}

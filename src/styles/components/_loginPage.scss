@@ -1,0 +1,33 @@
+.box-layout {
+    align-items: center;
+    background: url('/image/bg-ground.jpg');
+    background-size: cover;
+    border: 2px solid #e6e6e6;
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+    width: 100vw;
+  }
+  
+  .box-layout__box {
+    background: fade-out(white, .15);
+    border-radius: 3px;
+    padding: $l-size $m-size;
+    text-align: center;
+    width: 25rem;
+  }
+  
+  .box-layout__title {
+    margin: 0 0 $m-size 0;
+    line-height: 1;
+  }
+
+  .login-button{
+      padding: $xss-size;
+  }
+
+  .fab{
+      color: #f53232;
+      margin-right: $xss-size;
+  }
+  

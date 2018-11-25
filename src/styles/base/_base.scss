@@ -1,0 +1,33 @@
+html{
+    font-size: 62.5%;
+}
+
+body{
+    background: #fafafa;
+    color: $dark-grey;
+    font-family: 'Open Sans',Helvetica, Arial, sans-serif;
+    font-size: $m-size;
+    line-height: 1.6;
+}
+
+button{
+    cursor: pointer;
+}
+
+.is-active{
+    font-weight: bold;
+}
+
+a{
+    color: black;
+    text-decoration: none;
+}
+
+a:hover{
+    opacity: 0.5;
+}
+
+button{
+    border: 1px solid #494646;
+    background: white;
+}

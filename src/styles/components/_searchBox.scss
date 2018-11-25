@@ -1,0 +1,27 @@
+@media screen and (max-width:768px){
+    .searchBox{
+        display: none;
+    }
+}
+.searchBox{
+    width: 25rem;
+}
+
+.searchBox input{
+    width: 100%;
+    padding-left: $xss-size;
+    padding-right: $xss-size;
+}
+
+.searchResult{
+    width: inherit;
+    background: snow;
+    border: 1px solid #e6e6e6;
+    border-radius: 3px;
+    box-shadow: 0 0 5px rgba(0,0,0,.0975);
+    position: absolute;
+    padding: 5px;
+    overflow-x: hidden;
+    overflow-y: auto;
+    z-index: 10;
+}

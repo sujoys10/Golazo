@@ -1,0 +1,48 @@
+.ReactModalPortal>div {
+    opacity: 0;
+  }
+  
+.ReactModalPortal .ReactModal__Overlay {
+    display: flex;
+    justify-content: center;
+    transition: opacity 200ms ease-in-out;
+    z-index: 1000;
+
+}
+  
+.ReactModalPortal .ReactModal__Overlay--after-open {
+    opacity: 1;
+}
+  
+.ReactModalPortal .ReactModal__Overlay--before-close {
+    opacity: 0;
+}
+
+.content__modal{
+  max-width: 60rem;
+  overflow: auto;
+  outline: none;
+}
+
+.ReactModalPortal .ReactModal__Content--after-open{
+  position: fixed;
+  top: 40px;
+  bottom: 40px;
+}
+
+
+/* .ReactModal__Overlay{
+  z-index: 1000;
+}
+.ReactModal__Content{
+  z-index: 10000;
+  overflow: scroll;
+}
+.post__container{
+  max-width: 500px;
+  margin: 0 auto;
+}
+.post__container .post >img{
+  height: 350px;
+} */
+

@@ -1,0 +1,129 @@
+.userProfile{
+    max-width: 90rem;
+    margin: 7.5rem auto;
+}
+
+.user__details{
+    padding-top:20px;
+    display: flex;
+    height: 160px;
+}
+
+.user__dp{
+    width:30rem;
+    margin-right: 5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.dp__container{
+    display: flex;
+    height: 100%;
+    width: 160px;
+}
+
+.dp__container img{
+    border-radius: 50%;
+    height: 100%;
+    width: 100%;
+}
+
+.user__name{
+    margin: $xs-size 0;
+}
+
+.user__numbers{
+    display: flex;
+    list-style-type: none;
+    margin-bottom: 0px;
+    margin-top: 4px;
+    padding-left: 0;
+}
+.item{
+    font-size: 16px;
+    text-align: center;
+    margin-right: 24px;
+}
+.item__number{
+    display: block;
+    color: #262626;
+    font-weight: 600;
+}
+
+.user__button{
+    margin-top: $xs-size;
+    width: 225px;
+}
+.ef__button{
+    background: $white;
+    border: 1px solid #e6e6e6;
+    border-radius: 5px;
+    padding: $xss-size 0;
+    width: 100%;
+}
+
+.user__bio{
+    padding: 0 16px;
+    color: royalblue;
+}
+
+.gallery-header{
+    margin: 8px 4px;
+    padding: 4px 0;
+    border-top: 1px solid #e6e6e6;
+    border-bottom: 1px solid #e6e6e6;
+    text-align: center;
+}
+.userContent{
+   display: flex;
+   flex-wrap: wrap;
+   justify-content: space-between;
+}
+
+.userPost{
+    width: 32%;
+    margin-bottom:18px;
+}
+
+
+.userPost img{
+    width: 100%;
+    height: 100%;
+}
+
+@media screen and (max-width:450px){
+    .user__details{
+        padding-top: $xs-size;
+    }
+    .userPost{
+        width: 49%;
+        margin-bottom: $xs-size;
+    }
+    .user__dp{
+        width: 15rem;
+        margin-right: 3rem;
+    }
+    .dp__container{
+        width: 110px;
+        height: 110px;
+    }
+    .user__bio p{
+        margin-top: 0;
+    }
+    
+}
+
+@media screen and (max-width:360px){
+    .user__details{
+        height: 14rem;
+    }
+    .user__dp{
+        width: 10rem;
+        margin-right: 1rem;
+    }
+    .dp__container{
+        width: 85px;
+        height: 85px;
+    }
+}

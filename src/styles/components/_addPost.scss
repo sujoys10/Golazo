@@ -1,0 +1,19 @@
+.addPostBar{
+    padding:$m-size $m-size;
+    margin-bottom: $xs-size;
+    border: 1px solid #e6e6e6;
+    border-radius:5 px;
+    background: white;
+}
+
+@media screen and (max-width:768px){
+    .addPostBar{
+        margin-left: $xs-size;
+        margin-right: $xs-size;
+    }
+}
+
+.addPost__button{
+    float: right;
+    padding: $xss-size;
+}

@@ -1,0 +1,24 @@
+.extras{
+    max-width: 90rem;
+    margin: 6.7rem auto;
+}
+
+.left__col{
+    float: left;
+    width: 73%;
+}
+
+.right__col{
+    float: left;
+    margin: 5.1rem 0 0 1%;
+    width: 25.5%;
+}
+
+@media screen and (max-width:768px){
+    .left__col{
+        width: 100%;
+    }
+    .right__col{
+        display: none;
+    }
+}

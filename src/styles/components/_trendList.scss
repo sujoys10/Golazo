@@ -1,0 +1,31 @@
+.trendList{
+    background: $white;
+    border: 1px solid #e6e6e6;
+    border-radius: 3px;
+    padding: 16px;
+}
+
+@media screen and (max-width:768px){
+    .trendList{
+        margin: 7rem 0;
+    }
+}
+
+.trendList__header{
+    margin: 0;
+    margin-bottom: $s-size;
+    font-weight: 600;
+    opacity: 0.5;
+    border-bottom:1px solid #e6e6e6;
+    border-radius: 3px;
+}
+
+.tagName, .tagCount{
+    margin: 0;
+}
+
+.tagCount{
+    color: #657786;
+    font-size: $font-small;
+    margin-top: -4px;
+}

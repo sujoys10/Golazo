@@ -1,0 +1,127 @@
+'use strict';
+
+var template = React.createElement(
+    'div',
+    null,
+    React.createElement(
+        'h1',
+        null,
+        'goal goal goal'
+    ),
+    React.createElement(
+        'p',
+        null,
+        'visca barca messi10'
+    ),
+    React.createElement(
+        'ol',
+        null,
+        React.createElement(
+            'li',
+            null,
+            'one'
+        ),
+        React.createElement(
+            'li',
+            null,
+            'hog'
+        )
+    )
+);
+
+//Embedding Expressions in JSX
+var user = {
+    firstname: 'Sujoy',
+    lastname: 'SaHA'
+};
+
+function username(user) {
+    return user.firstname + " " + user.lastname;
+}
+
+var element = React.createElement(
+    'div',
+    null,
+    React.createElement(
+        'h1',
+        null,
+        'Hi ',
+        username(user)
+    )
+);
+
+//Specifying Attributes with JSX
+var elementC = React.createElement(
+    'h1',
+    { className: 'greeting' },
+    'Hello, world!'
+);
+
+//Conditional
+var club = {
+    name: 'FC barcelona',
+
+    bestPlayer: 'Messi'
+};
+
+function clubDetails(coach) {
+    if (coach) {
+        return React.createElement(
+            'p',
+            null,
+            'Name: ',
+            coach
+        );
+    }
+}
+
+var elementx = React.createElement(
+    'div',
+    null,
+    React.createElement(
+        'h2',
+        null,
+        club.name
+    ),
+    club.rank <= 5 && React.createElement(
+        'h5',
+        null,
+        'RANK : ',
+        club.rank
+    ),
+    React.createElement(
+        'h4',
+        null,
+        club.bestPlayer ? club.bestPlayer : "None"
+    ),
+    clubDetails(club.coach)
+);
+
+//Updating the Rendered Element
+
+function tick() {
+    var elementTime = React.createElement(
+        'div',
+        null,
+        React.createElement(
+            'h1',
+            null,
+            'Hello, world!'
+        ),
+        React.createElement(
+            'h2',
+            null,
+            'It is ',
+            new Date().toLocaleTimeString(),
+            '.'
+        )
+    );
+    ReactDOM.render(elementTime, document.getElementById('root'));
+}
+
+//setInterval(tick, 1000);
+
+var appRoot = document.getElementById("app");
+
+ReactDOM.render(elementx, appRoot);
+"use strict";

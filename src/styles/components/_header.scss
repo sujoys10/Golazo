@@ -1,0 +1,46 @@
+.header__container{
+    background: #fff;
+    border: 1px solid #e6e6e6;
+    margin-bottom: $l-size;
+    padding: $xs-size $xss-size;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 100000;
+}
+
+.header{
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    max-width: 90rem;
+    margin: 0 auto;
+}
+
+.header__title{
+    font-size: $l-size;
+    font-weight: 600;
+}
+ 
+.user *{
+   margin-left: 1rem;
+}
+.header__user{
+    font-size: larger;
+} 
+
+@media screen and (max-width:768px){
+    .user{
+        margin-right:$xs-size ;
+    }
+    .header__user{
+        display: none;
+    }
+}
+
+.logout__button{
+    padding-top:2px; 
+    padding-bottom: 2px;
+    font-weight: 600;
+}
