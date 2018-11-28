@@ -68,8 +68,27 @@ class UserProfile extends React.Component{
                                                     
                                     <ul className="user__numbers">
                                      <li className="item"><span className="item__number">{Object.keys(this.props.user.posts).length}</span>posts</li>
-                                     <Link to={`/f/${this.props.user.name}/followers`}><li className="item"><span className="item__number">{this.props.user.followers.length}</span>followers</li></Link>
-                                     <Link to={`/f/${this.props.user.name}/following`}><li className="item"><span className="item__number">{this.props.user.followings.length}</span>following</li></Link>
+                                        <li className="item">
+                                            {this.props.user.followers.length === 0 ? 
+                                                   <Link to={`/f/${this.props.user.name}/followers`} onClick={(e) => e.preventDefault()}>
+                                                        <span className="item__number">{this.props.user.followers.length}</span>
+                                                   </Link>:
+                                                    <Link to={`/f/${this.props.user.name}/followers`} >
+                                                        <span className="item__number">{this.props.user.followers.length}</span>
+                                                    </Link>
+                                            }followers
+                                        </li>
+                                        <li className="item">
+                                            {this.props.user.followings.length === 0 ? 
+                                                   <Link to={`/f/${this.props.user.name}/followings`} onClick={(e) => e.preventDefault()}>
+                                                        <span className="item__number">{this.props.user.followings.length}</span>
+                                                   </Link>:
+                                                    <Link to={`/f/${this.props.user.name}/followings`} >
+                                                        <span className="item__number">{this.props.user.followings.length}</span>
+                                                    </Link>
+                                            }followings
+                                        </li>
+                            
                                     </ul>
                                     <div className="user__button">
                                         {(this.props.currentUser.uid === this.props.user.uid) ?
