@@ -110,15 +110,24 @@
 
 .shorts{
     height: 180px;
+    overflow: hidden;
+}
+
+.short__hr{
+    width: 90%;
+    margin: 0;
 }
 .post__extras{
     display: flex;
-    border-top: 1px solid #e6e6e6;
 }
+
 .post__extras *{
-    word-spacing: -4px;
-    border-top: 1px solid #e6e6e6;
+    margin: 0;
     margin-right: $xss-size;
+}
+
+.short__comment{
+    word-spacing: 0.5px;
 }
 @media screen and (max-width:450px){
     .user__details{
@@ -145,6 +154,9 @@
     .user__bio p{
         margin-top: 0;
     }
+    .shorts{
+        font-size: smaller;
+    }
     
 }
 
@@ -163,7 +175,5 @@
     .userContent{
         margin-left: 2px;
     }
-    .shorts{
-        font-size: small;
-    }
+    
 }

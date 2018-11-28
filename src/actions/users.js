@@ -19,7 +19,7 @@ export const usersFetchDataSuccess = (users) => ({
     return (dispatch) => {
         dispatch(userIsLoading(true));
         axios
-            .get(`${url}?timestamp=${new Date().getTime()}`)
+            .get(`${url}`)
             .then(res => {
                 if(!res){
                     throw Error(res.statusText)

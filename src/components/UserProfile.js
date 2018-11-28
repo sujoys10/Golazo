@@ -15,7 +15,7 @@ class UserProfile extends React.Component{
     }
 
     componentWillMount(){
-        this.props.fetchData(`http://localhost:5000/api/user/${this.props.match.params.uid}`);                 
+        this.props.fetchData(`/api/user/${this.props.match.params.uid}`);                 
     }
       
  
@@ -56,7 +56,6 @@ class UserProfile extends React.Component{
             return(
                 <div className="userProfile">
                     <div>
-                        {console.log(this.props)}
                         { Object.keys(this.props.user).length !== 0 && 
                             <div className="user__details">
                                 <div className="user__dp">
@@ -117,11 +116,13 @@ class UserProfile extends React.Component{
                                             <UserInfo user={post.author} />
                                             <Link to={`/p/${post._id}`}>
                                                 <div className="post__caption shorts">{post.caption}</div>
-                                            </Link>    
+                                            </Link>
+                                            <hr className="short__hr"></hr>    
                                             <div className="post__extras">
-                                                {post.likes.length !== 0 && <p className="post__like">{post.likes.length} <i className="fas fa-futbol"></i></p>}
-                                                {post.comments.length !== 0 && <p className="post__like">{post.comments.length} <i className="far fa-comment"></i></p>}
+                                                {<p className="post__like short__like">{post.likes.length} <i className="fas fa-futbol"></i></p>}
+                                                {<p className="post__like short__comment">{post.comments.length} <i className="far fa-comment"></i></p>}
                                             </div>
+                                            
                                         </div>                      
                                     );
                                 })

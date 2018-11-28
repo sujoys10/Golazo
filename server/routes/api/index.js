@@ -33,7 +33,6 @@ router.get('/tag', (req, res) => {
         .exec()
         .then(posts => {
           res.json(posts);
-          console.log(posts);
        })
        .catch(err => console.log('hi',err));
 });

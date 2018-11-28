@@ -2,13 +2,13 @@
     background: $white;
     border: 1px solid #e6e6e6;
     border-radius: 3px;
-    margin-bottom: 3rem;
+    margin-bottom: 1rem;
     padding-bottom: $xs-size;
 }
 
 @media screen and (max-width:768px){
     .post{
-        margin-bottom: $m-size;
+        margin-bottom: $xs-size;
     }
 }
 
@@ -21,8 +21,7 @@
 
 .post__caption{
     margin-bottom: 0;
-    padding: 0 $xs-size;
-    padding-bottom: $xss-size;
+    padding: $xss-size $m-size;
     font: 500;
 }
 
@@ -36,7 +35,11 @@
 }
 
 .post__lc{
-    margin: $xss-size 0;
+    margin: 0;
+}
+
+.post__like{
+    margin: 0;
 }
 .post__button{
     border: none;
@@ -45,12 +48,6 @@
     font-weight: 500;
     margin-left: -5px;
     margin-right: $xs-size;
-}
-
-.post__like{
-    margin:0;
-    margin-bottom: $xss-size;
-    font-weight: 600;
 }
 
 .commentLink{
@@ -75,7 +72,7 @@
     border: 0;
     height: 18px;
     resize: none;
-    margin-top: $xs-size;
+    margin-top: 0;
     width: 90%;
 }
 
