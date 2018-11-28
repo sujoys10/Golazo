@@ -3,14 +3,19 @@ import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import LoadingPage from './LoadingPage';
 import { usersFetchData, addFollower, addFollowing, removeFollower, removeFollowing } from '../actions/users';
+import UserInfo from './UserInfo';
 
 class UserProfile extends React.Component{
     constructor(props){
-        super(props); 
+        super(props);
+        this.state = {
+            imagePosts: 'block',
+            shorts: 'none'
+        } 
     }
 
     componentWillMount(){
-        this.props.fetchData(`/api/user/${this.props.match.params.uid}`);                 
+        this.props.fetchData(`http://localhost:5000/api/user/${this.props.match.params.uid}`);                 
     }
       
  
@@ -23,7 +28,21 @@ class UserProfile extends React.Component{
             this.props.addFollower(this.props.user.uid, this.props.currentUser.uid);
             this.props.addFollowing(this.props.currentUser.uid,this.props.user.uid);  
         }  
-    } 
+    }
+    
+    showImagePosts = () => {
+        this.setState({
+            imagePosts:'block',
+            shorts: 'none'
+        })
+    }
+
+    showShorts = () => {
+        this.setState({
+            shorts: 'block',
+            imagePosts: 'none'
+        })
+    }
 
     
     render(){
@@ -37,7 +56,7 @@ class UserProfile extends React.Component{
             return(
                 <div className="userProfile">
                     <div>
-                        
+                        {console.log(this.props)}
                         { Object.keys(this.props.user).length !== 0 && 
                             <div className="user__details">
                                 <div className="user__dp">
@@ -72,20 +91,46 @@ class UserProfile extends React.Component{
                        <p>{this.props.user.bio}</p>
                     </div>
                     <div>
-                        { <h3 className="gallery-header">POSTS</h3> }
-                        <div className="userContent">
-                        {this.props.user.posts && this.props.user.posts.map((post) =>{
-                            return(
-                                <div className="userPost">
-                                    <Link to={`/p/${this.props.user.name}/${post._id}`}><img src={post.content}/></Link>
-                                </div>                      
-                            );
-                        })
+                         <div className="gallery-header">
+                              <h3 onClick={this.showImagePosts}>POSTS</h3>
+                              <h3 onClick={this.showShorts}>SHORTS</h3>
+                           </div> 
+
+                        {this.props.user.posts && 
+                         <div className="userContent">
+                             {
+                                 this.props.user.posts.filter(post => post.category === 'image').map((post) =>{
+                                    return(
+                                        <div className="userPost" style={{display: this.state.imagePosts}}>
+                                          
+                                             <Link to={`/p/${post._id}`}><img src={post.content}/></Link>
+                                        
+                                        </div>                 
+                                    );
+                                })
+                                
+                             }
+                             { 
+                                 this.props.user.posts.filter(post => post.category === 'short').map((post) =>{
+                                    return(
+                                        <div className="userPost" style={{display: this.state.shorts}}>
+                                            <UserInfo user={post.author} />
+                                            <Link to={`/p/${post._id}`}>
+                                                <div className="post__caption shorts">{post.caption}</div>
+                                            </Link>    
+                                            <div className="post__extras">
+                                                {post.likes.length !== 0 && <p className="post__like">{post.likes.length} <i className="fas fa-futbol"></i></p>}
+                                                {post.comments.length !== 0 && <p className="post__like">{post.comments.length} <i className="far fa-comment"></i></p>}
+                                            </div>
+                                        </div>                      
+                                    );
+                                })
+                             }
+                         </div>   
                         }
-                      
+                        
                         </div>
                     </div>
-                </div>
             )
     }       
 }

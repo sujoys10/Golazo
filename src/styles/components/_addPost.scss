@@ -12,8 +12,16 @@
         margin-right: $xs-size;
     }
 }
+.addPostBar *{
+    margin-left: $xs-size;
+}
 
 .addPost__button{
     float: right;
     padding: $xss-size;
+}
+
+.postForm__header{
+    text-align: center;
+    margin: $xs-size;
 }

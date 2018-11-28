@@ -34,13 +34,10 @@ firebase.auth().onAuthStateChanged((user) => {
   if(user){
     store.dispatch(login(user.uid, user.displayName, user.photoURL));
     store.dispatch(fetchCurrentUserData(`/api/user/${user.uid}`));
-    store.dispatch(startSetPost()).then(() => {
         renderApp();
         if(history.location.pathname === '/'){
           history.push('/dashboard');
         } 
-    });
-   
   } 
   else{
     store.dispatch(logout());

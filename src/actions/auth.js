@@ -36,7 +36,7 @@ export const login = (uid, name, avatar) => ({
 
 export const editUser = (uid, updates) =>{
     return(dispatch) => {
-        axios
+    return axios
            .post(`/api/user/${uid}/edit`, updates)
            .then((res) =>{
                 if(!res){

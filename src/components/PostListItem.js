@@ -66,7 +66,9 @@ import UserInfo from './UserInfo';
 
                 </div>
                 <div className="post__caption">{this.props.caption}</div>
-                <img src={this.props.content} className="post__content"/>
+                <div style={{display: this.props.category === 'short' ? 'none': 'block'}}>
+                  <img src={this.props.content} className="post__content"/>
+                </div>
                 <div className="post__extra">
                     <div className="post__lc">
                         <button className="post__button"

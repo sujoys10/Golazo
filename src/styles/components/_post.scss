@@ -13,7 +13,6 @@
 }
 
 .post__header{
-  //  border-bottom: 1px solid #e6e6e6;
     padding: $xs-size;
     padding-bottom: 0;
     display: flex;
@@ -31,12 +30,6 @@
     width: 100%;
     height: auto;
 }
-
-/* @media screen and (max-width:768px){
-    .post__content{
-        height: 40rem;
-    }
-} */
 
 .post__extra{
     padding: 0 $m-size;
@@ -74,7 +67,8 @@
     display: flex;
     justify-content: space-between;
     align-items: baseline;
-} 
+}
+
 
 .commentBox{
     padding: $xss-size;
@@ -85,11 +79,13 @@
     width: 90%;
 }
 
+.commentBox:focus{
+    outline: 0;
+    border-bottom: 1px solid $dark-grey;
+}
+
 .comment__button{
     border: none;
     background: none;
 }
 
-.comment__button:active{
-    border: none;
-}

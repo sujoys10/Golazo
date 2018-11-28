@@ -13,6 +13,9 @@ body{
 button{
     cursor: pointer;
 }
+button:focus{
+    outline: 0;
+}
 
 .is-active{
     font-weight: bold;

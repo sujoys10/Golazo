@@ -1,6 +1,6 @@
 .userProfile{
     max-width: 90rem;
-    margin: 7.5rem auto;
+    margin: 6.1rem auto;
 }
 
 .user__details{
@@ -73,32 +73,66 @@
     padding: 4px 0;
     border-top: 1px solid #e6e6e6;
     border-bottom: 1px solid #e6e6e6;
+    display: flex;
+    justify-content: center;
     text-align: center;
+}
+
+.gallery-header *{
+    margin: 0 $xs-size;
+    cursor: pointer;
+}
+
+.gallery{
+    display: flex;
+    justify-content: center;
 }
 .userContent{
    display: flex;
    flex-wrap: wrap;
-   justify-content: space-between;
+}
+
+@media screen and (min-width:850px){
+    .userContent{
+        margin-left: $xs-size;
+    }
 }
 
 .userPost{
-    width: 32%;
-    margin-bottom:18px;
+    width: 31.555%;
+    margin: 6px;
 }
-
 
 .userPost img{
     width: 100%;
     height: 100%;
 }
 
+.shorts{
+    height: 180px;
+}
+.post__extras{
+    display: flex;
+    border-top: 1px solid #e6e6e6;
+}
+.post__extras *{
+    word-spacing: -4px;
+    border-top: 1px solid #e6e6e6;
+    margin-right: $xss-size;
+}
 @media screen and (max-width:450px){
     .user__details{
         padding-top: $xs-size;
     }
+    .userContent{
+        margin-left: 3px;
+    }
     .userPost{
-        width: 49%;
-        margin-bottom: $xs-size;
+        width: 48%;
+        margin:3px;
+    }
+    .shorts{
+        line-height: 20px;
     }
     .user__dp{
         width: 15rem;
@@ -125,5 +159,11 @@
     .dp__container{
         width: 85px;
         height: 85px;
+    }
+    .userContent{
+        margin-left: 2px;
+    }
+    .shorts{
+        font-size: small;
     }
 }

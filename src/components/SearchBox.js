@@ -26,7 +26,7 @@ class SearchBox extends React.Component{
         <div className="searchBox">
             <input 
                 type="text" 
-                placeholder="search fellows..."
+                placeholder="search fans..."
                 value={this.state.text}
                 onChange={(e)=> {
                     this.setState({text:e.target.value});
@@ -34,7 +34,7 @@ class SearchBox extends React.Component{
                     this.setState({output:true});
                 }}
             /> 
-            <div className="searchResult" tabIndex="0" style = {{display: this.state.output ? 'block':'none' }}>
+            <div className="searchResult" tabIndex="0" style = {{display: this.state.text ? 'block':'none' }}>
                 {this.props.users && Object.keys(this.props.users).length !== 0 && 
                  this.props.users.map(user => {
                      return(

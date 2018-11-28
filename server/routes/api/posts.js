@@ -30,7 +30,7 @@ const User = require('../../models/user');
 }); 
 
  router.get('/p/:id', (req, res) => {
-    console.log('userpost');
+    console.log(req.params.id);
     Post.find({'_id': req.params.id})
         .populate("author", 'uid name avatar')
         .populate({ path :"comments",populate: {path :"author",select : 'uid name avatar uid'}})
@@ -67,16 +67,20 @@ router.delete('/:id', (req, res) => {
         .then(post => post.remove()
            .then(() => res.json({success: true}))
         )
-        .catch((err) => res.status(404).json({success : false}));
+        .catch(err => {
+            console.log(err);
+        });
 });
 
 
 router.post('/:id/like', (req, res) => {
-    console.log(req.body);
         Post.findOneAndUpdate({_id:req.params.id}, {$push: {likes: req.body.uid}},{ "new": true})
             .then(post => {
                 res.json(post);
             })
+            .catch(err => {
+                console.log(err);
+            });
 });
 
 router.post('/:id/unlike', (req, res) => {
@@ -84,6 +88,9 @@ router.post('/:id/unlike', (req, res) => {
         .then(post => {
             res.json(post);
         })
+        .catch(err => {
+            console.log(err);
+        });
 });
 
 

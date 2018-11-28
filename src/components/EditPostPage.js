@@ -1,6 +1,7 @@
 import React from 'react';
-import PostForm from './AddImageForm';
-import { editPost, startRemovePost, findPost } from '../actions/post';
+import ImageForm from './AddImageForm';
+import ShortForm from './ShortForm';
+import { editPost, startRemovePost } from '../actions/post';
 import { connect } from 'react-redux';
 
 class EditPost extends React.Component{
@@ -11,16 +12,37 @@ class EditPost extends React.Component{
     render(){
         return(
             <div>
-            {this.props.post && 
-                <div className="editPost">
-                <PostForm 
-                  post={this.props.post}
-                   onSubmit={(post) => {
-                        this.props.editPost(this.props.post._id, post);
-                        setTimeout(() => {
-                            this.props.history.go(-1)},2000 ); 
-                        }}
-                        />
+            {this.props.post &&
+             <div className="editPost"> 
+              {(this.props.post.category === 'image')?
+                <div>
+                    <h3 className="postForm__header">Edit your post</h3>
+                    <ImageForm 
+                        post={this.props.post}
+                        onSubmit={(post) => {
+                                this.props.editPost(this.props.post._id, post).then(()=>{
+                                    this.props.history.go(-1);
+                                })
+                                /* setTimeout(() => {
+                                    this.props.history.go(-1)},2000 ); */ 
+                                }}
+                    />
+                </div>
+                :
+                <div>
+                    <h3 className="postForm__header">Edit your short</h3>
+                    <ShortForm 
+                        post={this.props.post}
+                        onSubmit={(post) => {
+                            {console.log(post)}
+                                this.props.editPost(this.props.post._id, post).then(()=>{
+                                    this.props.history.go(-1);
+                                })     
+                            }}
+                    />
+                </div>
+             }
+                
                 <button
                     className="removeButton" 
                     onClick={() =>{

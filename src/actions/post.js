@@ -30,7 +30,7 @@ export const startAddPost = (postData = {}) => {
         } = postData;
 
         const post = {category, content, caption, tags, author, createdAt, likes, comments};
-        axios
+     return axios
             .post(`/api/posts/${uid}`, post)
             .then(res => {
                 const x = {
@@ -80,7 +80,7 @@ export const resetPost = () => {
 export const findPost = (id) => {
     return (dispatch) => {
         return axios
-                .get(`/p/${id}`)
+                .get(`/api/posts/p/${id}`)
                 .then(res => {
                     dispatch({
                         type: 'FIND_POST',

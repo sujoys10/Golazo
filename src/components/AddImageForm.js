@@ -6,7 +6,6 @@ import { connect } from 'react-redux';
 class PostForm extends React.Component{
     constructor(props){
         super(props);
-        console.log(props);
         this.state = {
             percentage: 0,
             author: {uid : props.postedBy.uid, name: props.postedBy.name, avatar: props.postedBy.avatar},
@@ -43,7 +42,6 @@ class PostForm extends React.Component{
             const percentage = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
             
             this.setState(() => ({percentage}));
-            console.log(this.state.uploader);
         },
         (error) => {
             console.log(error);

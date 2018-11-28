@@ -12,42 +12,7 @@ router.get('/', (req, res) => {
         .exec()
         .then(posts => res.json(posts));
 });    
- 
- /*  router.get('/', (req, res) => {
-    Post.aggregate([
-        {
-            $lookup:
-                {
-                    from: "users",
-                    localField: "author.uid",
-                    foreignField: "_id",
-                    as: "creator"
-                }
-        },
-        {
-            "$unwind": "$creator"
-        },
-        {
-            $project: { 
-                content: 1,
-                caption: 1,
-                author: 1,
-                category: 1,
-                tags: 1,
-                comments: 1,
-                likes: 1,
-                createdAt: 1,
-                "creator.name": 1,
-                "creator.avatar": 1,
-                "creator._id": 1
-            }
-        }
-    ]).then(post => {
-        res.json(post);
-        console.log(post);
-    })
-    .catch(err => console.log(err))   
-}); */   
+   
 
 router.get('/trending', (req, res) => {
     console.log('tagss');
