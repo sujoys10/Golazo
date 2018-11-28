@@ -5,7 +5,11 @@
     padding: 16px;
 }
 
-
+@media screen and (max-width:600px){
+    .trendList{
+        margin: 6.1rem auto;
+    }
+}
 .trendList__header{
     margin: 0;
     margin-bottom: $s-size;
