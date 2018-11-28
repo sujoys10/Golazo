@@ -19,8 +19,7 @@ class PostForm extends React.Component{
     }
     onCaptionChange = (e) => {
         const caption = e.target.value;
-        this.setState(() => ({ caption }));
-        this.addTag();
+        this.setState(() => ({ caption }), () => this.addTag());
     };
     
     addTag = () => {
@@ -75,6 +74,7 @@ class PostForm extends React.Component{
                 <form className="postForm">
                     <input 
                         type="file"
+                        accept="image/*"
                         onChange={this.onContentChange}
                     />
                     <textarea

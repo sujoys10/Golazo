@@ -9,14 +9,17 @@
     width: 73%;
 }
 
-@media screen and (max-width:768px){
+.newsfeed{
+    margin: 1rem 0;
+}
+
+@media screen and (max-width:600px){
     .postbar{
         width: 100%;
     }
-}
-
-.newsfeed{
-    margin: 1rem 0;
+    .sidebar{
+        display:none;
+    }
 }
 
 .sidebar{

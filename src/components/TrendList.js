@@ -21,7 +21,7 @@ export default class TrendList extends React.Component{
            return(
                     <div className="trendList">
                        <p className="trendList__header">Trending hashtags</p>
-                       { this.state && this.state.trending.slice(0,10).map(tag => {
+                       { this.state && this.state.trending.map(tag => {
                            return(
                             <div>
                                 <Link to={`/posts/${tag._id.substr(1)}`}><b className="tagName">{tag._id}</b></Link>
