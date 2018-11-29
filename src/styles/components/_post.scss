@@ -12,6 +12,12 @@
     }
 }
 
+@media screen and (max-width: 600px){
+    .post{
+        border: none;
+    }
+}
+
 .post__header{
     padding: $xs-size;
     padding-bottom: 0;
